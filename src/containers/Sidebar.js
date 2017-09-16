@@ -11,7 +11,6 @@ class PostsContainer extends Component {
 
 	componentDidMount() {
 		this.props.getPosts()	
-		console.log('nav', this.props)
 	}
 
 	render() {

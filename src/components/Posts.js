@@ -14,7 +14,10 @@ const Posts = ({createPost, postPending, posts, selectPost}) =>
 		{
 			posts.map(post => 
 				<div key={post._id}>
-					<Link to={`posts/${post._id}`}>
+					<Link 
+						to={`posts/${post._id}`}
+						onClick={() => selectPost(post._id)}
+					>
 						{post.title}
 					</Link>
 				</div>

@@ -28,9 +28,19 @@ export const posts = (state = [], action) => {
 			return action.payload
 		case types.CREATE_POST.SUCCESS:
 			return [...state, action.payload]
+		case types.UPDATE_POST.SUCCESS:
+		case types.GET_POST.SUCCESS:
+			return state.map(post => 
+				post._id !== action.payload._id
+				? post
+				: action.payload
+			)
 		case types.SELECT_POST:
-			console.log('post selected', action.payload)
-			return state
+			return state.map(post => 
+				post._id !== action.payload._id
+				? {...post, isSelected: false}
+				: {...post, isSelected: true}
+			)
 		default:
 			return state
 	}

@@ -26,7 +26,7 @@ export const apiMiddleware = ({dispatch}) => next => action => {
 	}
 
 	if (action.type === types.API_POST) {
-		axios.post(BASE_URL + payload.url, {
+		axios.post(BASE_URL + payload.url + appendQuery(payload.query), {
 			data: payload.data
 		}) 
 			.then(response => {

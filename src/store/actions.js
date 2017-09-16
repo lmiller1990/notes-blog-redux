@@ -41,3 +41,13 @@ export const getPost = (_id) => ({
 		...types.GET_POST
 	}
 })
+
+export const updatePost = (post) => ({
+	type: types.API_POST,
+	payload: {
+		query: post._id,
+		data: post,
+		url: 'posts',
+		...types.UPDATE_POST
+	}
+})
