@@ -1,11 +1,17 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+
 import {createPost, getPosts, selectPost} from '../store/actions'
 import Posts from '../components/Posts'
 
 class PostsContainer extends Component {
+	constructor(props) {
+		super(props)
+	}
+
 	componentDidMount() {
 		this.props.getPosts()	
+		console.log('nav', this.props)
 	}
 
 	render() {

@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
+
 import Post from './Post'
 
 const Posts = ({createPost, postPending, posts, selectPost}) => 
@@ -10,7 +12,13 @@ const Posts = ({createPost, postPending, posts, selectPost}) =>
 			Create
 		</button>
 		{
-			posts.map(post => <Post post={post} selectPost={selectPost} key={post._id}/>)
+			posts.map(post => 
+				<div key={post._id}>
+					<Link to={`posts/${post._id}`}>
+						{post.title}
+					</Link>
+				</div>
+			)
 		}
 	</div>
 

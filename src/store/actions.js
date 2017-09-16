@@ -32,3 +32,12 @@ export const selectPost = (_id) => ({
 		_id
 	}
 })
+
+export const getPost = (_id) => ({
+	type: types.API_GET,
+	payload: {
+		query: _id,
+		url: 'posts',
+		...types.GET_POST
+	}
+})
