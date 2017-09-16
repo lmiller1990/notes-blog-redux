@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {createPost, getPosts} from '../store/actions'
+import {createPost, getPosts, selectPost} from '../store/actions'
 import Posts from '../components/Posts'
 
 class PostsContainer extends Component {
@@ -13,7 +13,8 @@ class PostsContainer extends Component {
 			<Posts 
 				createPost={this.props.createPost} 
 				postPending={this.props.postPending}
-				getPosts={this.props.getPosts}
+				posts={this.props.posts}
+				selectPost={this.props.selectPost}
 			/>
 		)
 	}
@@ -26,4 +27,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, { createPost, getPosts })(PostsContainer)
+export default connect(mapStateToProps, { createPost, getPosts, selectPost })(PostsContainer)

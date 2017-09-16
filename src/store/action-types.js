@@ -12,3 +12,4 @@ export const ADD_POST = 'ADD_POST'
 
 export const CREATE_POST = asyncActionType('CREATE_POST')
 export const GET_POSTS = asyncActionType('GET_POSTS')
+export const SELECT_POST = 'SELECT_POST'

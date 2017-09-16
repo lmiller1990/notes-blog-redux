@@ -28,6 +28,9 @@ export const posts = (state = [], action) => {
 			return action.payload
 		case types.CREATE_POST.SUCCESS:
 			return [...state, action.payload]
+		case types.SELECT_POST:
+			console.log('post selected', action.payload)
+			return state
 		default:
 			return state
 	}

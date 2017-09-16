@@ -25,3 +25,10 @@ export const getPosts = () => ({
 		...types.GET_POSTS
 	}
 })
+
+export const selectPost = (_id) => ({
+	type: types.SELECT_POST,
+	payload: {
+		_id
+	}
+})
