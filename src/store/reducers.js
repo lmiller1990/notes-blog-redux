@@ -11,12 +11,12 @@ export const counter = (state = 0, action) => {
 	}	
 }
 
-export const ui = (state = { postPending: false }, action) => {
+export const ui = (state = { createPostPending: false }, action) => {
 	switch (action.type) {
 		case types.CREATE_POST.PENDING: 
-			return {...state, postPending: true}
+			return {...state, createPostPending: true}
 		case types.CREATE_POST.SUCCESS: 
-			return {...state, postPending: false}
+			return {...state, createPostPending: false}
 		default:
 			return state
 	}

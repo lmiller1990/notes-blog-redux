@@ -3,8 +3,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const Album = require('./post')
+const morgan = require('morgan')
 
 const app = express()
+
+app.use(morgan('combined'))
 
 const testdburl = 'mongodb://localhost:27017/posts-test-redux'
 mongoose.connect(testdburl, { useMongoClient: true   })
@@ -35,6 +38,22 @@ app.get('/posts/:_id', (req, res) => {
 	}, 1000)
 })
 
+app.post('/posts/create', (req, res) => {
+	console.log('Create...', req.body.data.title)
+	setTimeout(() => {
+		const title = req.body.data.title
+
+		Post.create({ title: title }, (err, post) => {
+			if (!err) {
+				console.log('created', post)
+				return res.json(post)
+			} else {
+				console.log('Err', err)
+			}
+		})
+	}, 1000)
+})
+
 app.post('/posts/:_id', (req, res) => {
 	setTimeout(() => {
 
@@ -48,20 +67,6 @@ app.post('/posts/:_id', (req, res) => {
 			}
 		})
 	}, 1500)
-})
-
-app.post('/posts/create', (req, res) => {
-	setTimeout(() => {
-		const title = req.body.data.title
-
-		Post.create({ title: title }, (err, post) => {
-			if (!err) {
-				return res.json(post)
-			} else {
-				console.log('Err', err)
-			}
-		})
-	}, 1000)
 })
 
 app.listen(3002, () => console.log('Listening on 3002'))

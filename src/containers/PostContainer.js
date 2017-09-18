@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getPost, updatePost} from '../store/actions'
+import '../styles.css'
 
 class PostContainer extends Component {
 	constructor(props) {

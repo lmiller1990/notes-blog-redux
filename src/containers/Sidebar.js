@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
-import {createPost, getPosts, selectPost} from '../store/actions'
-import Posts from '../components/Posts'
+import {getPosts} from '../store/actions'
 
-class PostsContainer extends Component {
+class Sidebar extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -15,21 +15,12 @@ class PostsContainer extends Component {
 
 	render() {
 		return(
-			<Posts 
-				createPost={this.props.createPost} 
-				postPending={this.props.postPending}
-				posts={this.props.posts}
-				selectPost={this.props.selectPost}
-			/>
+			<div>
+				Sidebar
+				<Link to="/posts">Posts</Link>
+			</div>
 		)
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		posts: state.posts,
-		postPending: state.ui.postPending
-	}
-}
-
-export default connect(mapStateToProps, { createPost, getPosts, selectPost })(PostsContainer)
+export default connect(undefined, { getPosts })(Sidebar)

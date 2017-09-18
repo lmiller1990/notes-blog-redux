@@ -9,6 +9,7 @@ import React from 'react'
 import {apiMiddleware} from './store/middleware/api'
 import rootReducer from './store/reducers'
 import App from './App'
+import './styles.css'
 
 const store = createStore(rootReducer, applyMiddleware(apiMiddleware, logger))
 
