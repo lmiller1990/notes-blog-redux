@@ -24,14 +24,14 @@ const projects = [
 			techs.redux,
 			techs.testing,
 			techs.node,
-			techs.aws
+			techs.heroku
 		]
 	},
 	{
 		id: 0,
 		title: 'Vue.js Tetris',
 		description: 'A tetris game built using Vue.js and unit testing.',
-		link: 'github.com/lmiller/vue-tetris',
+		link: 'github.com/lmiller1990/vue-tetris',
 		techonogies: [
 			techs.vue,
 			techs.vuex,
@@ -42,7 +42,7 @@ const projects = [
 		id: 1,
 		title: 'Share My Anything',
 		description: 'A simple site to allow anyone to share images, grouped by category.',
-		link: 'github.com/lmiller/share-my-anything',
+		link: 'github.com/lmiller1990/share-my-anything',
 		techonogies: [
 			techs.aws,
 			techs.testing,
@@ -55,7 +55,7 @@ const projects = [
 		id: 2,
 		title: 'Ordering System',
 		description: 'A website to keep track of inventory and create shopping lists.',
-		link: 'github.com/lmiller/unplan-ordering',
+		link: 'https://github.com/lmiller1990/unplan-ordering',
 		techonogies: [
 			techs.rails,
 			techs.testing,
