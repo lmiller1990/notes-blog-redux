@@ -14,6 +14,7 @@ export const apiMiddleware = ({dispatch}) => next => action => {
 	}
 
 	const {payload} = action
+	console.log('BASE_URL:', BASE_URL)
 
 	dispatch({type: payload.PENDING})
 

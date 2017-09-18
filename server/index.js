@@ -2,16 +2,16 @@ const cors = require('cors')
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const morgan = require('morgan')
 
 const Album = require('./post')
 const config = require('./config')
 
 const app = express()
 
-app.use(morgan('combined'))
 app.use(express.static('public'))
+
 app.set('port', process.env.PORT || 3002)
+process.env.NODE_ENV = 'production'
 
 // const testdburl = 'mongodb://localhost:27017/posts-test-redux'
 const testdburl = `mongodb://${config.DB_USER}:${config.DB_PASSWORD}@ds117093.mlab.com:17093/lachlan-blog`
@@ -74,4 +74,4 @@ app.post('/posts/:_id', (req, res) => {
 	}, 1500)
 })
 
-app.listen(app.get('port'), () => console.log(`Listening on ${app.get('port')}`))
+app.listen(app.get('port'), () => console.log(`Listening on ${app.get('port')} in ${process.env.NODE_ENV}`))
