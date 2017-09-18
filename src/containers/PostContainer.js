@@ -10,7 +10,6 @@ class PostContainer extends Component {
 		super(props)
 		this.state = {
 			title: '',
-			content: '',
 			editorState: EditorState.createEmpty()
 		}
 
@@ -56,14 +55,16 @@ class PostContainer extends Component {
 				{ this.props.post
 					?
 					<div>
-						Title: {this.props.post.title}
 						<input 
+							style={{ width: '250px' }}
 							type="text" 
 							name="title"
 							value={this.state.title} 
 							onChange={this.handleChange} />
 
-						<button onClick={this.handleSubmit}>Update</button>
+						<button 
+							style={{float: 'right'}}
+							onClick={this.handleSubmit}>Update</button>
 						<PostBodyEditor 
 							onChange={this.onChange}
 							editorState={this.state.editorState} />

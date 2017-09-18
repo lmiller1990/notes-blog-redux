@@ -15,9 +15,24 @@ class Sidebar extends Component {
 
 	render() {
 		return(
-			<div>
-				Sidebar
-				<Link to="/posts">Posts</Link>
+			<div className="sidebar-container">
+				<div className="header">Programming</div>
+				<div className="indented-link">
+					<Link to="/resume">Resume</Link>
+				</div>
+
+				<div className="indented-link">
+					<Link to="/posts">Posts</Link>
+				</div>
+
+				<div className="indented-link">
+					<Link to="/projects">Projects</Link>
+				</div>
+
+				<div className="header">Life</div>
+				<div className="indented-link">
+					<Link to="/goals">Manifesto</Link>
+				</div>
 			</div>
 		)
 	}

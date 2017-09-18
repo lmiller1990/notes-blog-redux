@@ -9,14 +9,10 @@ class PostsList extends Component {
 		return (
 
 			<div className="posts container">
-				Pending: {this.props.createPostPending.toString()}
-				<button 
-					onClick={() => this.props.createPost()}>
-					Create
-				</button>
+				<div className="header">Posts</div>
 				{
 					this.props.posts.map(post => 
-						<div key={post._id}>
+						<div className="indented-link" key={post._id}>
 							<Link 
 								to={`/posts/${post._id}`}
 								onClick={() => this.props.selectPost(post._id)}
@@ -26,6 +22,10 @@ class PostsList extends Component {
 						</div>
 					)
 				}
+				<button 
+					onClick={() => this.props.createPost()}>
+					New Post
+				</button>
 			</div>
 		)
 	}
@@ -33,8 +33,7 @@ class PostsList extends Component {
 
 function mapStateToProps(state) {
 	return {
-		posts: state.posts,
-		createPostPending: state.ui.createPostPending
+		posts: state.posts
 	}
 }
 
