@@ -1,7 +1,8 @@
 import axios from 'axios'
 import * as types from '../action-types'
 
-const BASE_URL = 'http://localhost:3002/'
+const PORT = process.env.PORT
+const BASE_URL = `https://localhost:${PORT}/`
 
 const appendQuery = (query) => query ? `/${query}` : '' 
 

@@ -11,6 +11,7 @@ const app = express()
 
 app.use(morgan('combined'))
 app.use(express.static('public'))
+app.set('port', process.env.PORT || 3002)
 
 // const testdburl = 'mongodb://localhost:27017/posts-test-redux'
 const testdburl = `mongodb://${config.DB_USER}:${config.DB_PASSWORD}@ds117093.mlab.com:17093/lachlan-blog`
@@ -73,4 +74,4 @@ app.post('/posts/:_id', (req, res) => {
 	}, 1500)
 })
 
-app.listen(3002, () => console.log('Listening on 3002'))
+app.listen(app.get('port'), () => console.log(`Listening on ${app.get('port')}`))
