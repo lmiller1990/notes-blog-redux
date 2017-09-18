@@ -31,7 +31,7 @@ class Sidebar extends Component {
 
 				<div className="header">Life</div>
 				<div className="indented-link">
-					<Link to="/goals">Manifesto</Link>
+					<Link to="/manifesto">Manifesto</Link>
 				</div>
 			</div>
 		)
