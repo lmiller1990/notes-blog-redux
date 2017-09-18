@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getPost, updatePost} from '../store/actions'
+import {Editor, EditorState, ContentState} from 'draft-js'
+import PostBodyEditor from './PostBodyEditor'
 import '../styles.css'
 
 class PostContainer extends Component {
@@ -8,10 +10,12 @@ class PostContainer extends Component {
 		super(props)
 		this.state = {
 			title: '',
-			content: ''
+			content: '',
+			editorState: EditorState.createEmpty()
 		}
 
 		this.handleChange = this.handleChange.bind(this)
+		this.onChange = this.onChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
@@ -22,9 +26,16 @@ class PostContainer extends Component {
 	componentWillReceiveProps(nextProps) {
 		this.setState({ 
 			title: nextProps.post.title, 
-			content: nextProps.post.content
+			content: nextProps.post.content,
+			editorState: EditorState.createWithContent(
+				ContentState.createFromText(nextProps.post.content)
+			)
 		})
 	}
+
+	onChange(editorState) {
+		this.setState({editorState})
+	} 
 
 	handleChange(event) {
 		this.setState({
@@ -33,7 +44,10 @@ class PostContainer extends Component {
 	}
 
 	handleSubmit() {
-		this.props.updatePost({...this.props.post, title: this.state.title, content: this.state.content})
+		this.props.updatePost({...this.props.post, 
+			title: this.state.title, 
+			content: this.state.editorState.getCurrentContent().getPlainText()
+		})
 	}
 
 	render() {
@@ -49,13 +63,10 @@ class PostContainer extends Component {
 							value={this.state.title} 
 							onChange={this.handleChange} />
 
-						<input 
-							type="text" 
-							name="content"
-							value={this.state.content} 
-							onChange={this.handleChange} />
-
 						<button onClick={this.handleSubmit}>Update</button>
+						<PostBodyEditor 
+							onChange={this.onChange}
+							editorState={this.state.editorState} />
 					</div>
 					:
 					<div>
