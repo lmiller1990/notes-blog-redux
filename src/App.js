@@ -13,12 +13,12 @@ class App extends Component {
 			<div className="app main container">
 				<div className="left column">
 					<Route path="/" component={Sidebar}/>
-					<Route path="/posts" component={PostsList} />
 				</div>
 				<div className="right column">
 					<Route path="/posts/:_id" component={PostContainer}/>
 					<Route path="/projects" component={Projects} />
 					<Route path="/manifesto" component={Manifesto} />
+					<Route exact path="/posts" component={PostsList} />
 					<Route path="/resume" component={Resume} />
 				</div>
 			</div>

@@ -18,7 +18,7 @@ class Manifesto extends Component {
 							Programming - always be working on a project, and learning new things - this includes frameworks, tools and design principals. 
 						</li>
 						<li>
-							Langauges - I try to use Japanese every day. When I don't know a word, I write it down and try to use it again as soon as possible. I would also like to study other languages in the future.
+							Langauges - I try to use Japanese every day. When I don't know a word, I write it down and try to use it again as soon as possible. I would also like to study other languages in the future, like Korean.
 						</li>
 						<li>
 							Never be satisfied - being content with what I have means I won't be pushing myself to improve and learn. I want to never be content, and always aiming higher.
@@ -28,6 +28,7 @@ class Manifesto extends Component {
 						</li>
 					</ul>
 				</div>
+
 				<h4>Minimal Luggage</h4>
 				<div>
 					As much as possible, I avoid accumlating physical possessions, unless they provide great value to my life. For example:
@@ -53,6 +54,18 @@ class Manifesto extends Component {
 							</li>
 						</ul>
 					</div>
+				</div>
+				<h4>Communication and Relationships</h4>
+				<div>
+					As exciting as programming, studying and training are, the most valuable skill is the ability to communicate. 
+					<ul>
+						<li>
+							Speaking - I will strive to improve at public speaking, and at concisely and clearly expressing myself.
+						</li>
+						<li>
+							People - I appreciate and treasure the people around me, like my family, friends, and Lily.
+						</li>
+					</ul>
 				</div>
 			</div>
 		)
