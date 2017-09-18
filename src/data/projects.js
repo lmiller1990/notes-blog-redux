@@ -17,7 +17,7 @@ const projects = [
 	{
 		id: 3,
 		title: 'React Redux Homepage',
-		description: 'My personal homepage, build using React and Redux',
+		description: 'My personal homepage, build using React and Redux.',
 		link: '/',
 		techonogies: [
 			techs.react,
