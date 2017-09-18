@@ -2,15 +2,18 @@ const cors = require('cors')
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const Album = require('./post')
 const morgan = require('morgan')
+
+const Album = require('./post')
+const config = require('./config')
 
 const app = express()
 
 app.use(morgan('combined'))
 
-const testdburl = 'mongodb://localhost:27017/posts-test-redux'
-mongoose.connect(testdburl, { useMongoClient: true   })
+// const testdburl = 'mongodb://localhost:27017/posts-test-redux'
+const testdburl = `mongodb://${config.DB_USER}:${config.DB_PASSWORD}@ds117093.mlab.com:17093/lachlan-blog`
+mongoose.connect(testdburl, { useMongoClient: true })
 
 const Post = mongoose.model('Post')
 
