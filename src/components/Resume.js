@@ -7,7 +7,7 @@ class Resume extends Component {
 		return(
 			<div>
 				<div className="header">
-					Resume - coming soon.
+					Resume
 				</div>
 					{
 						experience.map(exp => <ResumeTile key={exp.id} experience={exp} />)

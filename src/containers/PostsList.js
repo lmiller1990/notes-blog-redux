@@ -7,8 +7,7 @@ import {createPost, getPosts, selectPost} from '../store/actions'
 class PostsList extends Component {
 	render() {
 		return (
-
-			<div className="posts container">
+			<div>
 				<div className="header">Posts</div>
 				{
 					this.props.posts.map(post => 

@@ -22,15 +22,16 @@ const experience = [
 	{
 		id: 1,
 		company: 'HTM',
-		link: 'http://htm.co.jp',
+		link: 'http://www.htm.co.jp',
 		position: positions.fullstack,
 		location: 'Tokyo, Japan',
-		description: 'I am currently a full stack softwave developer at HTM, back office for your Japanese Subsidary, where I develop systems to process payroll and provide business insight to clients',
+		description: 'I am currently a full stack softwave developer at HTM, back office for your Japanese subsidary, where I develop systems to process payroll and provide business insight to clients',
 		technologies: [
 			techs.vue,
 			techs.vuex,
 			techs.dotnet,
-			techs.csharp
+			techs.csharp,
+			techs.sql
 		]
 	},
 ]
