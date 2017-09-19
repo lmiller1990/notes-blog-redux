@@ -1,15 +1,5 @@
 import React, {Component} from 'react'
-
-const techLabel = (color) => {
-	return {
-		color,
-		border: `1px solid ${color}`,
-		borderRadius: '4px',
-		padding: '1px',
-		fontSize: '0.8em',
-		marginRight: '2px'
-	}
-}
+import Technologies from './Technologies'
 
 const ProjectTile = ({project}) => 
 	<div className="project-tile">
@@ -22,13 +12,7 @@ const ProjectTile = ({project}) =>
 			<div>
 				{project.description}
 			</div>
-			<div>
-				{project.techonogies.map(tech => 
-					<span key={tech.name} className="tech-label" style={techLabel(tech.color)}>
-						{tech.name}
-					</span>
-				)}
-			</div>
+			<Technologies technologies={project.technologies} />
 		</div>
 	</div>
 
