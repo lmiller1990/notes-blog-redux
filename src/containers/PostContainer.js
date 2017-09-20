@@ -1,16 +1,30 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import PrismDraftDecorator from 'draft-js-prism'
+import DraftHighlightExample from './DraftHighlightExample'
+import {Editor, EditorState, ContentState, Decorator, convertFromRaw} from 'draft-js'
 import {getPost, updatePost} from '../store/actions'
-import {Editor, EditorState, ContentState} from 'draft-js'
 import PostBodyEditor from './PostBodyEditor'
 import '../styles.css'
+import '../prism-coy.css'
 
 class PostContainer extends Component {
 	constructor(props) {
 		super(props)
+
+		const decorator = new PrismDraftDecorator()
+
+		const contentState = convertFromRaw({
+			entityMap: {},
+			blocks: [
+				{ type: 'code-block', text: 'var msg = "this is awesome"' }
+			]
+		}) 
+
 		this.state = {
 			title: '',
-			editorState: EditorState.createEmpty()
+			editorState: EditorState.createEmpty(),
+			codeEditorState: EditorState.createWithContent(contentState, decorator)
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -55,6 +69,7 @@ class PostContainer extends Component {
 				{ this.props.post
 					?
 					<div>
+						<DraftHighlightExample />
 						<input 
 							style={{ width: '250px' }}
 							type="text" 
