@@ -5,6 +5,10 @@ import {connect} from 'react-redux'
 import {createPost, getPosts, selectPost} from '../store/actions'
 
 class PostsList extends Component {
+	componentDidMount() {
+		this.props.getPosts()
+	}		
+
 	render() {
 		return (
 			<div>

@@ -9,21 +9,28 @@ class Sidebar extends Component {
 		super(props)
 	}
 
-	componentDidMount() {
-		this.props.getPosts()	
-	}
-
 	render() {
+		const showPosts = this.props.authenticated 
+		? (
+				<div className="indented-link">
+					<Link to="/posts">Notes</Link>
+				</div>
+			)
+		: null
+
 		return(
 			<div className="sidebar-container">
 				<div className="header">Programming</div>
+
+				<div className="indented-link">
+					<Link to="/">Home</Link>
+				</div>
+
 				<div className="indented-link">
 					<Link to="/resume">Resume</Link>
 				</div>
 
-				<div className="indented-link">
-					<Link to="/posts">Posts</Link>
-				</div>
+				{showPosts}
 
 				<div className="indented-link">
 					<Link to="/projects">Projects</Link>
@@ -38,4 +45,8 @@ class Sidebar extends Component {
 	}
 }
 
-export default connect(undefined, { getPosts })(Sidebar)
+const mapStateToProps = (state) => ({
+	authenticated: state.auth.authenticated
+})
+
+export default connect(mapStateToProps, {})(Sidebar)

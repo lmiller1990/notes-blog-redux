@@ -5,15 +5,6 @@ import {getPost, updatePost} from '../store/actions'
 import PostBodyEditor from './PostBodyEditor'
 import '../styles.css'
 
-const styleMap = {
-	CODE: {
-		backgroundColor: 'rgba(0, 0, 0, 0.05)',
-		fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
-		fontSize: 16,
-		padding: 2,
-	},
-}
-
 class PostContainer extends Component {
 
 	constructor(props) {
@@ -27,10 +18,6 @@ class PostContainer extends Component {
 		this.handleChange = this.handleChange.bind(this)
 		this.onChange = this.onChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
-	}
-
-	componentDidMount() {
-		this.props.getPost(this.props.match.params._id)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -61,6 +48,9 @@ class PostContainer extends Component {
 	}
 
 	render() {
+		if (!this.props.authenticated) {
+			return null
+		}
 		return(
 			<div>
 				{ this.props.post
@@ -75,7 +65,9 @@ class PostContainer extends Component {
 
 						<button 
 							style={{float: 'right'}}
-							onClick={this.handleSubmit}>Update</button>
+							onClick={this.handleSubmit}>
+								Update
+						</button>
 						<PostBodyEditor 
 							onChange={this.onChange}
 							editorState={this.state.editorState} />
@@ -93,7 +85,8 @@ class PostContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
 	const _post = state.posts.filter(p => p._id === ownProps.match.params._id)
 	return {
-		post: _post.length > 0 ? _post[0] : null
+		post: _post.length > 0 ? _post[0] : null,
+		authenticated: state.auth.authenticated
 	}
 }
 

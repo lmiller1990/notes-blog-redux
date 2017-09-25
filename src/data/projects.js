@@ -2,10 +2,22 @@ import techs from './technologies'
 
 const projects = [
 	{
+		id: 4,
+		title: 'React-native reminders app',
+		description: 'A simple react native app to remind you to do things',
+		link: 'https://github.com/lmiller1990/react-native-reminders',
+		technologies: [
+			techs.reactNative,
+			techs.redux,
+			techs.testing,
+			techs.heroku
+		]
+	},
+	{
 		id: 3,
 		title: 'React Redux Homepage',
 		description: 'My personal homepage, build using React and Redux.',
-		link: '/',
+		link: 'https://github.com/lmiller1990/notes-blog-redux',
 		technologies: [
 			techs.react,
 			techs.redux,

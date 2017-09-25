@@ -19,7 +19,6 @@ export const apiMiddleware = ({dispatch}) => next => action => {
 	dispatch({type: payload.PENDING})
 
 	if (action.type === types.API_GET) {
-		console.log('params', payload.params)
 		axios.get(BASE_URL + payload.url + appendQuery(payload.query)) 
 			.then(response => {
 				dispatch({ type: payload.SUCCESS, payload: response.data })

@@ -46,6 +46,21 @@ export const posts = (state = [], action) => {
 	}
 }
 
+export const auth = (state = { authenticated: false }, action) => {
+	switch (action.type) {
+		case types.LOGIN.SUCCESS:
+			return { authenticated : true }
+		case types.LOGIN.FAILURE:
+			return { authenticated: false }
+		case types.LOGIN.PENDING:
+			return { authenticated: false }
+		case types.LOGOUT.SUCCESS:
+			return { authenticated: false }
+		default: 
+			return state
+	}
+}
+
 export default combineReducers({
-	posts, counter, ui
+	posts, counter, ui, auth
 })

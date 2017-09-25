@@ -14,4 +14,6 @@ export const CREATE_POST = asyncActionType('CREATE_POST')
 export const GET_POSTS = asyncActionType('GET_POSTS')
 export const GET_POST = asyncActionType('GET_POST')
 export const UPDATE_POST = asyncActionType('UPDATE_POST')
+export const LOGIN = asyncActionType('LOGIN')
+export const LOGOUT = asyncActionType('LOGOUT')
 export const SELECT_POST = 'SELECT_POST'

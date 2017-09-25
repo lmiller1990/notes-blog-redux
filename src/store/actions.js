@@ -51,3 +51,20 @@ export const updatePost = (post) => ({
 		...types.UPDATE_POST
 	}
 })
+
+export const login = (credentials) => ({
+	type: types.API_POST,
+	payload: {
+		data: credentials,
+		url: 'login',
+		...types.LOGIN
+	}
+})
+
+export const logout = () => ({
+	type: types.API_POST,
+	payload: {
+		url: 'logout',
+		...types.LOGOUT
+	}
+})

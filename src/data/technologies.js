@@ -5,6 +5,7 @@ const techs = {
 	'sql': { name: 'SQL Server', color: '#E0A000' },
 	'vuex': { name: 'vuex', color: '#7FB700' },
 	'react': { name: 'React.js', color: '#2766CF' },
+	'reactNative': { name: 'React Native', color: '#2766CF' },
 	'redux': { name: 'redux', color: '#71218c' },
 	'mongo': { name: 'mongodb', color: '#270F5C' },
 	'aws': { name: 'AWS (S3, EC2)', color: '#E3C75C' },
