@@ -8,20 +8,9 @@ const positions = [
 
 const experience = [
 	{
-		id: 0,
-		company: 'Two Red Kites',
-		link: 'http://tworedkites.com',
-		position: positions.backend,
-		location: 'Brisbane, Australia',
-		technologies: [
-			techs.rails,
-			techs.testing
-		],
-		description: 'I was a backend developer in an agile team for a number of compliance systems for various clients.'
-	},
-	{
 		id: 1,
 		company: 'HTM',
+		timespan: 'October 2016 - present',
 		link: 'http://www.htm.co.jp',
 		position: positions.fullstack,
 		location: 'Tokyo, Japan',
@@ -33,6 +22,19 @@ const experience = [
 			techs.csharp,
 			techs.sql
 		]
+	},
+	{
+		id: 0,
+		company: 'Two Red Kites',
+		timespan: 'Feb 2016 - July 2016',
+		link: 'http://tworedkites.com',
+		position: positions.backend,
+		location: 'Brisbane, Australia',
+		technologies: [
+			techs.rails,
+			techs.testing
+		],
+		description: 'I was a backend developer in an agile team for a number of compliance systems for various clients.'
 	},
 ]
 

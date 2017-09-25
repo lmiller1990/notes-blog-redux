@@ -4,10 +4,13 @@ import Technologies from './Technologies'
 const ResumeTile = ({ experience }) => {
 	return(
 		<div className="project-tile">
-			<div className="header">
+			<div className="inline-header">
 				<a href={experience.link}>
 					{experience.company}
 				</a>
+			</div>
+			<div style={{display: 'inline-block', fontSize: '0.85em'}}>
+				{experience.timespan}
 			</div>
 			<div className="indented-link">
 				<div>
